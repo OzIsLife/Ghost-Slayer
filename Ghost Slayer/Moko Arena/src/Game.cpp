@@ -1,0 +1,252 @@
+#include "Game.h"
+
+Game::Game(GLfloat windowWidth, GLfloat windowHeight)
+{
+    this->_screen     = new Box(new Coordinate(0.0f, 0.0f), windowWidth, windowHeight);
+    this->_player     = new Player(windowWidth, windowHeight);
+    this->_enemies    = new Enemy(windowWidth, windowHeight);
+    this->_activeAmmo = new Ammunition();
+    this->_ground     = new Ground();
+    this->_currPhase  = NONE;
+    this->_mouse      = new Coordinate(0.0f, 0.0f);
+    this->_score      = 0;
+    this->_sound      = new Sound();
+    this->_playBackground = new Texture();
+    this->_howToPlayBackground = new Texture();
+    this->_lose = new Texture();
+    this->_play = new Texture();
+    {
+        Coordinate* coord = new Coordinate(0.45f, 0.40f);
+        Box* sizeRatio    = new Box(coord, 0.11f, 0.05f);
+        Coordinate* gap   = new Coordinate(0.0f, 0.1f);
+        Phase main[3]     = {PLAY, HOW_TO_PLAY, EXIT};
+        this->_mainScene  = new Menu(windowWidth, windowHeight, 3, sizeRatio, gap, main);
+    }
+}
+
+Game::~Game()
+{
+    delete this->_screen;
+    delete this->_player;
+    delete this->_activeAmmo;
+    delete this->_ground;
+    delete this->_mouse;
+    delete this->_mainScene;
+}
+
+GLint Game::initializeGame()
+{
+    glShadeModel(GL_SMOOTH);               //For good transition in animations
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);  //Set background color
+    glClearDepth(2.0f);                    //Decide what is at front and behind
+    glEnable(GL_DEPTH_TEST);               //For the depth calculations
+    glEnable(GL_COLOR_MATERIAL);           //This is for base color of the object (glColor3f)
+    //setLight(GL_LIGHT0);                   //Create light instance
+    glEnable(GL_ALPHA_TEST);
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_COLOR_MATERIAL);
+
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        //set up orthographic projection to get the background to fill the window
+        //draw background
+    glClear(GL_DEPTH_BUFFER_BIT);
+        //set up projection an
+
+    this->_playBackground->loadTexture("images/BG/BG.png");
+    this->_play->loadTexture("images/BG/BGPlay.png");
+    this->_player->initializePlayer("images/Tiles/2.png");
+    this->_activeAmmo->initializeAmmo("images/Tiles/circle.png");
+    this->_ground->loadGround(this->_screen->_width, this->_screen->_height, this->_enemySpawn, this->_playerSpawn);
+    this->_enemies->initializeEnemey("images/Enemy/ghost.png");
+    this->_howToPlayBackground->loadTexture("images/Menu/howToPlay.png");
+    this->_lose->loadTexture("images/Menu/lose.png");
+
+    std::string paths[3] = {"images/Menu/play.png", "images/Menu/howPlay.png", "images/Menu/exit.png"};
+    this->_mainScene->initializeMain(paths);
+    this->_sound->playMusic("sounds/Kappa.mp3", TRUE);
+
+    return TRUE;
+}
+
+GLint Game::drawGame()
+{
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glLoadIdentity();
+
+    switch(this->_currPhase) {
+        case NONE: {
+            this->_mainScene->drawMain();
+            this->_playBackground->bindTexture();
+            this->_playBackground->drawTexture(this->_screen, TRUE);
+        } break;
+
+        case PLAY: {
+            glPushAttrib(GL_CURRENT_BIT);
+            glColor3f(1.0f, 0.0f, 1.0f);
+            glRasterPos2f(this->_screen->_width * 0.8f, this->_screen->_height * 0.2f);
+            std::string text = "Score: " + std::to_string(this->_score);
+
+            for (GLint i = 0; i < text.size(); ++i) {
+                glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, text[i]);
+            }
+            glPopAttrib();
+
+            this->_player->drawPlayer();
+            this->_enemies->drawEnemy();
+            this->_activeAmmo->drawAmmo();
+            this->_ground->drawGround();
+            this->_play->bindTexture();
+            this->_play->drawTexture(this->_screen, TRUE);
+        } break;
+
+        case HOW_TO_PLAY: {
+            this->_howToPlayBackground->bindTexture();
+            this->_howToPlayBackground->drawTexture(this->_screen, TRUE);
+        } break;
+
+        case LOSE: {
+            this->_lose->bindTexture();
+            this->_lose->drawTexture(this->_screen, TRUE);
+        } break;
+    }
+}
+
+GLvoid Game::resizeGame(GLsizei width, GLsizei height)
+{
+    glViewport(0, 0, width, height);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+
+    gluOrtho2D(0, width, 0, height);        //Z range: 1 to -1
+
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();                       //Call this every time after ModelView
+
+    this->_player->playerScale(width, height, this->_screen->_width, _screen->_height);
+    this->_enemies->scaleEnemy(width, height, this->_screen->_width, _screen->_height);
+    this->_activeAmmo->ammoScale(width, height, this->_screen->_width, _screen->_height);
+    this->_ground->groundScale(width, height, this->_screen->_width, _screen->_height);
+    this->_mainScene->scaleMain(width, height, this->_screen->_width, _screen->_height);
+
+    this->_screen->_width = width;
+    this->_screen->_height = height;
+}
+
+GLvoid Game::buttonPressed(WPARAM wParam)
+{
+    this->_areKeys[wParam] = TRUE;
+}
+
+GLvoid Game::buttonReleased(WPARAM wParam)
+{
+    this->_areKeys[wParam] = FALSE;
+}
+
+GLboolean Game::isButtonTrue(WPARAM wParam)
+{
+    return this->_areKeys[wParam];
+}
+
+GLvoid Game::settingCurrTime()
+{
+    this->_player->currTime();
+    this->_activeAmmo->currTime();
+    this->_enemies->currTime();
+    this->_player->getCurr();
+}
+
+GLvoid Game::settingPrevTime()
+{
+    this->_player->prevTime();
+    this->_activeAmmo->prevTime();
+    this->_enemies->prevTime();
+    this->_player->getPrev();
+}
+
+GLvoid Game::updatingGame()
+{
+    // updates screen but not rendering
+    switch (this->_currPhase) {
+        case PLAY: {
+            if(this->_areKeys[VK_ESCAPE]) {
+                this->_currPhase = NONE;
+                this->_score = 0;
+                this->_sound->stopMusic();
+                this->_sound->playMusic("sounds/Kappa.mp3", TRUE);
+                return;
+            }
+            // movement
+            if (this->_areKeys[0x41]) {
+                this->_player->moveLeft(this->_ground);
+            }
+
+            if (this->_areKeys[0x44]) {
+                this->_player->moveRight(this->_ground);
+            }
+
+            if (this->_areKeys[0x01]) {
+                Bullet* newBullet = this->_player->playerShoot(this->_mouse);
+                if(newBullet) {
+                    this->_activeAmmo->addAmmo(newBullet);
+                }
+            }
+
+            (this->_areKeys[0x57]) ? this->_player->moveUp(this->_ground) : this->_player->moveDown(this->_ground);
+
+            this->_enemies->spawnEnemy(this->_screen->_width, this->_screen->_height, this->_enemySpawn);
+            this->_player->inRange(_screen->_width, _screen->_height);
+            if (this->_enemies->moveEnemy(this->_player->getPlayerBox(), this->_ground) == LOSE) {
+                this->_currPhase = LOSE;
+                this->_score = 0;
+            }
+
+            this->_activeAmmo->inRange(_screen->_width, _screen->_height);
+            this->_activeAmmo->moveAmmo(this->_ground);
+            this->_activeAmmo->hitEnemy(this->_enemies);
+        } break;
+
+        case HOW_TO_PLAY:
+        case LOSE: {
+            if (this->_areKeys[VK_ESCAPE]) {
+                this->_currPhase = NONE;
+                this->_score = 0;
+                this->_sound->stopMusic();
+                this->_sound->playMusic("sounds/Kappa.mp3", TRUE);
+            }
+        } break;
+    }
+}
+
+GLvoid Game::updatingMouse(GLfloat x, GLfloat y)
+{
+    this->_mouse->_xPos = x;
+    this->_mouse->_yPos = this->_screen->_height - y;
+}
+
+GLvoid Game::destroyItem()
+{
+    this->_activeAmmo->removeAmmo();
+    this->_enemies->destroyEnemy(this->_score);
+}
+
+GLboolean Game::currPrase()
+{
+    return this->_currPhase == EXIT;
+}
+
+GLvoid Game::mousePressed()
+{
+    // if mouse clicked on option then go to that screen and checks and checks for the exact spot of the button
+    switch (this->_currPhase) {
+        case NONE: {
+            this->_currPhase = this->_mainScene->whichPhase(this->_mouse);
+            this->_player->resetPlayer();
+            this->_enemies->resetEnemy();
+            this->_activeAmmo->resetAmmo();
+            this->_player->spawnPlayer(this->_screen->_width, this->_screen->_height, this->_playerSpawn);
+        } break;
+    }
+}

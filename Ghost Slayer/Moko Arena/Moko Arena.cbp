@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Moko Arena" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Moko Arena" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="C:/Users/Khai/Desktop/Moko Arena 1.1/common/bin" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++14" />
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Moko Arena" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="C:/Users/Khai/Desktop/Moko Arena 1.1/common/bin" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="../common/include" />
+			<Add directory="include" />
+		</Compiler>
+		<Linker>
+			<Add library="../common/libSOIL.a" />
+			<Add library="glut32" />
+			<Add library="opengl32" />
+			<Add library="glu32" />
+			<Add library="winmm" />
+			<Add library="gdi32" />
+			<Add library="../common/lib/irrKlang.lib" />
+			<Add library="../common/libirrKlang.a" />
+			<Add directory="../common/lib" />
+		</Linker>
+		<Unit filename="include/Ammunition.h" />
+		<Unit filename="include/Enemy.h" />
+		<Unit filename="include/Game.h" />
+		<Unit filename="include/Ground.h" />
+		<Unit filename="include/Light.h" />
+		<Unit filename="include/Menu.h" />
+		<Unit filename="include/Player.h" />
+		<Unit filename="include/RigidBody.h" />
+		<Unit filename="include/Sound.h" />
+		<Unit filename="include/Texture.h" />
+		<Unit filename="include/Timer.h" />
+		<Unit filename="include/Utility.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/Ammunition.cpp" />
+		<Unit filename="src/Enemy.cpp" />
+		<Unit filename="src/Game.cpp" />
+		<Unit filename="src/Ground.cpp" />
+		<Unit filename="src/Light.cpp" />
+		<Unit filename="src/Menu.cpp" />
+		<Unit filename="src/Player.cpp" />
+		<Unit filename="src/RigidBody.cpp" />
+		<Unit filename="src/Sound.cpp" />
+		<Unit filename="src/Texture.cpp" />
+		<Unit filename="src/Timer.cpp" />
+		<Unit filename="src/Utility.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

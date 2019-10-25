@@ -1,0 +1,508 @@
+# depslib dependency file v1.0
+1557643841 source:c:\users\khai\desktop\moko arena 1.1\moko arena\main.cpp
+	<windows.h>
+	<Game.h>
+	<Timer.h>
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+	<windowsx.h>
+
+1557956753 source:c:\users\khai\desktop\moko arena 1.1\moko arena\src\player.cpp
+	"Player.h"
+
+1557956551 c:\users\khai\desktop\moko arena 1.1\moko arena\include\player.h
+	<Ground.h>
+	<Texture.h>
+	<Timer.h>
+	<windows.h>
+	<GL/gl.h>
+	<utility>
+	<time.h>
+	<cmath>
+	<vector>
+	<string>
+
+1554644808 c:\users\khai\desktop\moko arena 1.1\moko arena\include\rigidbody.h
+	<Texture.h>
+	<Ground.h>
+	<Utility.h>
+	<windows.h>
+	<GL/gl.h>
+
+1557957292 c:\users\khai\desktop\moko arena 1.1\moko arena\include\texture.h
+	<Utility.h>
+	<SOIL.h>
+	<GL/gl.h>
+	<stdio.h>
+
+1557110507 c:\users\khai\desktop\moko arena 1.1\moko arena\include\utility.h
+	<windows.h>
+	<GL/gl.h>
+
+1554541492 c:\users\khai\desktop\moko arena 1.1\moko arena\include\soil.h
+
+1554645526 source:c:\users\khai\desktop\moko arena 1.1\moko arena\src\rigidbody.cpp
+	"RigidBody.h"
+
+1554647856 source:c:\users\khai\desktop\moko arena 1.1\moko arena\src\texture.cpp
+	"Texture.h"
+
+1556522294 source:c:\users\khai\desktop\moko arena 1.1\moko arena\src\utility.cpp
+	"Utility.h"
+
+1557957198 source:c:\users\khai\desktop\moko arena 1.1\moko arena\src\ammunition.cpp
+	"Ammunition.h"
+
+1557644119 c:\users\khai\desktop\moko arena 1.1\moko arena\include\ammunition.h
+	<Texture.h>
+	<Enemy.h>
+	<Utility.h>
+	<Ground.h>
+	<Sound.h>
+	<Timer.h>
+	<windows.h>
+	<GL/gl.h>
+	<utility>
+	<vector>
+
+1557109934 c:\users\khai\desktop\moko arena 1.1\moko arena\include\ground.h
+	<Texture.h>
+	<Utility.h>
+	<windows.h>
+	<GL/gl.h>
+	<fstream>
+	<vector>
+	<string>
+	<iostream>
+
+1554644602 c:\users\khai\desktop\moko arena 1.1\moko arena\include\timer.h
+	<windows.h>
+	<GL/gl.h>
+	<time.h>
+	<iostream>
+
+1557955978 source:c:\users\khai\desktop\moko arena 1.1\moko arena\src\game.cpp
+	"Game.h"
+
+1557643619 c:\users\khai\desktop\moko arena 1.1\moko arena\include\game.h
+	<Player.h>
+	<Enemy.h>
+	<Ammunition.h>
+	<Ground.h>
+	<Sound.h>
+	<Light.h>
+	<Menu.h>
+	<Utility.h>
+	<windows.h>
+	<GL/glut.h>
+	<vector>
+	<string>
+	<iostream>
+
+1554638341 c:\users\khai\desktop\moko arena 1.1\common\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1557110060 source:c:\users\khai\desktop\moko arena 1.1\moko arena\src\ground.cpp
+	"Ground.h"
+
+1554644567 source:c:\users\khai\desktop\moko arena 1.1\moko arena\src\timer.cpp
+	"Timer.h"
+
+1554647133 c:\users\khai\desktop\moko arena 1.1\moko arena\include\light.h
+	<windows.h>
+	<GL/gl.h>
+
+1554647158 source:c:\users\khai\desktop\moko arena 1.1\moko arena\src\light.cpp
+	"Light.h"
+
+1556769351 c:\users\khai\desktop\moko arena 1.1\moko arena\include\menu.h
+	<Texture.h>
+	<Utility.h>
+	<windows.h>
+	<bits/stdc++.h>
+	<GL/gl.h>
+	<stdio.h>
+	<string.h>
+	<iostream>
+
+1556769393 source:c:\users\khai\desktop\moko arena 1.1\moko arena\src\menu.cpp
+	"Menu.h"
+
+1557908443 source:c:\users\khai\desktop\moko arena 1.1\moko arena\src\enemy.cpp
+	"Enemy.h"
+
+1557643157 c:\users\khai\desktop\moko arena 1.1\moko arena\include\enemy.h
+	<Player.h>
+	<Texture.h>
+	<Timer.h>
+	<Sound.h>
+	<Utility.h>
+	<windows.h>
+	<GL/gl.h>
+	<vector>
+	<utility>
+	<time.h>
+
+1557647821 source:c:\users\khai\desktop\moko arena 1.1\moko arena\src\sound.cpp
+	"Sound.h"
+
+1557648073 c:\users\khai\desktop\moko arena 1.1\moko arena\include\sound.h
+	<SNDS/irrKlang.h>
+	<windows.h>
+	<GL/gl.h>
+
+1557364724 c:\users\khai\desktop\moko arena 1.1\common\include\snds\irrklang.h
+	"ik_irrKlangTypes.h"
+	"ik_vec3d.h"
+	"ik_IRefCounted.h"
+	"ik_IVirtualRefCounted.h"
+	"ik_ESoundOutputDrivers.h"
+	"ik_ESoundEngineOptions.h"
+	"ik_EStreamModes.h"
+	"ik_SAudioStreamFormat.h"
+	"ik_ISoundEngine.h"
+	"ik_ISoundSource.h"
+	"ik_ISound.h"
+	"ik_IAudioStream.h"
+	"ik_IAudioStreamLoader.h"
+	"ik_ISoundEffectControl.h"
+	"ik_ISoundStopEventReceiver.h"
+	"ik_IFileFactory.h"
+	"ik_IFileReader.h"
+	"ik_ISoundDeviceList.h"
+	"ik_IAudioRecorder.h"
+	"ik_ISoundMixedOutputReceiver.h"
+
+1557364723 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_irrklangtypes.h
+	<wchar.h>
+
+1557364724 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_vec3d.h
+	<math.h>
+	"ik_irrKlangTypes.h"
+
+1557364723 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_irefcounted.h
+	"ik_irrKlangTypes.h"
+
+1557364724 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_ivirtualrefcounted.h
+	"ik_irrKlangTypes.h"
+
+1557364723 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_esoundoutputdrivers.h
+
+1557364722 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_esoundengineoptions.h
+
+1557364723 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_estreammodes.h
+
+1557364724 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_saudiostreamformat.h
+	"ik_IRefCounted.h"
+
+1557364724 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_isoundengine.h
+	"ik_IRefCounted.h"
+	"ik_vec3d.h"
+	"ik_ISoundSource.h"
+	"ik_ISound.h"
+	"ik_EStreamModes.h"
+	"ik_IFileFactory.h"
+	"ik_ISoundMixedOutputReceiver.h"
+
+1557364724 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_isoundsource.h
+	"ik_IVirtualRefCounted.h"
+	"ik_vec3d.h"
+	"ik_EStreamModes.h"
+	"ik_SAudioStreamFormat.h"
+
+1557364723 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_isound.h
+	"ik_IVirtualRefCounted.h"
+	"ik_ISoundEffectControl.h"
+	"ik_vec3d.h"
+
+1557364723 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_isoundeffectcontrol.h
+	"ik_IVirtualRefCounted.h"
+	"ik_vec3d.h"
+
+1557364723 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_ifilefactory.h
+	"ik_IRefCounted.h"
+
+1557364724 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_isoundmixedoutputreceiver.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1557364723 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_iaudiostream.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1557364723 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_iaudiostreamloader.h
+	"ik_IRefCounted.h"
+	"ik_IFileReader.h"
+
+1557364723 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_ifilereader.h
+	"ik_IRefCounted.h"
+
+1557364724 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_isoundstopeventreceiver.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1557364723 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_isounddevicelist.h
+	"ik_IRefCounted.h"
+
+1557364723 c:\users\khai\desktop\moko arena 1.1\common\include\snds\ik_iaudiorecorder.h
+	"ik_IRefCounted.h"
+	"ik_ISoundSource.h"
+
+1557957800 source:c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\main.cpp
+	<windows.h>
+	<Game.h>
+	<Timer.h>
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+	<windowsx.h>
+
+1557968829 c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\include\game.h
+	<Player.h>
+	<Enemy.h>
+	<Ammunition.h>
+	<Ground.h>
+	<Sound.h>
+	<Light.h>
+	<Menu.h>
+	<Utility.h>
+	<windows.h>
+	<GL/glut.h>
+	<vector>
+	<string>
+	<iostream>
+
+1557969205 c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\include\player.h
+	<Ground.h>
+	<Texture.h>
+	<Timer.h>
+	<Utility.h>
+	<windows.h>
+	<GL/gl.h>
+	<utility>
+	<time.h>
+	<cmath>
+	<vector>
+	<string>
+
+1557957801 c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\include\ground.h
+	<Texture.h>
+	<Utility.h>
+	<windows.h>
+	<GL/gl.h>
+	<fstream>
+	<vector>
+	<string>
+	<iostream>
+
+1557957801 c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\include\texture.h
+	<Utility.h>
+	<SOIL.h>
+	<GL/gl.h>
+	<stdio.h>
+
+1557957801 c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\include\utility.h
+	<windows.h>
+	<GL/gl.h>
+
+1557957801 c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\include\soil.h
+
+1557957801 c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\include\timer.h
+	<windows.h>
+	<GL/gl.h>
+	<time.h>
+	<iostream>
+
+1557957801 c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\include\enemy.h
+	<Player.h>
+	<Texture.h>
+	<Timer.h>
+	<Sound.h>
+	<Utility.h>
+	<windows.h>
+	<GL/gl.h>
+	<vector>
+	<utility>
+	<time.h>
+
+1557957801 c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\include\sound.h
+	<SNDS/irrKlang.h>
+	<windows.h>
+	<GL/gl.h>
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\irrklang.h
+	"ik_irrKlangTypes.h"
+	"ik_vec3d.h"
+	"ik_IRefCounted.h"
+	"ik_IVirtualRefCounted.h"
+	"ik_ESoundOutputDrivers.h"
+	"ik_ESoundEngineOptions.h"
+	"ik_EStreamModes.h"
+	"ik_SAudioStreamFormat.h"
+	"ik_ISoundEngine.h"
+	"ik_ISoundSource.h"
+	"ik_ISound.h"
+	"ik_IAudioStream.h"
+	"ik_IAudioStreamLoader.h"
+	"ik_ISoundEffectControl.h"
+	"ik_ISoundStopEventReceiver.h"
+	"ik_IFileFactory.h"
+	"ik_IFileReader.h"
+	"ik_ISoundDeviceList.h"
+	"ik_IAudioRecorder.h"
+	"ik_ISoundMixedOutputReceiver.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_irrklangtypes.h
+	<wchar.h>
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_vec3d.h
+	<math.h>
+	"ik_irrKlangTypes.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_irefcounted.h
+	"ik_irrKlangTypes.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_ivirtualrefcounted.h
+	"ik_irrKlangTypes.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_esoundoutputdrivers.h
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_esoundengineoptions.h
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_estreammodes.h
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_saudiostreamformat.h
+	"ik_IRefCounted.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_isoundengine.h
+	"ik_IRefCounted.h"
+	"ik_vec3d.h"
+	"ik_ISoundSource.h"
+	"ik_ISound.h"
+	"ik_EStreamModes.h"
+	"ik_IFileFactory.h"
+	"ik_ISoundMixedOutputReceiver.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_isoundsource.h
+	"ik_IVirtualRefCounted.h"
+	"ik_vec3d.h"
+	"ik_EStreamModes.h"
+	"ik_SAudioStreamFormat.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_isound.h
+	"ik_IVirtualRefCounted.h"
+	"ik_ISoundEffectControl.h"
+	"ik_vec3d.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_isoundeffectcontrol.h
+	"ik_IVirtualRefCounted.h"
+	"ik_vec3d.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_ifilefactory.h
+	"ik_IRefCounted.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_isoundmixedoutputreceiver.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_iaudiostream.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_iaudiostreamloader.h
+	"ik_IRefCounted.h"
+	"ik_IFileReader.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_ifilereader.h
+	"ik_IRefCounted.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_isoundstopeventreceiver.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_isounddevicelist.h
+	"ik_IRefCounted.h"
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\snds\ik_iaudiorecorder.h
+	"ik_IRefCounted.h"
+	"ik_ISoundSource.h"
+
+1557957801 c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\include\ammunition.h
+	<Texture.h>
+	<Enemy.h>
+	<Utility.h>
+	<Ground.h>
+	<Sound.h>
+	<Timer.h>
+	<windows.h>
+	<GL/gl.h>
+	<utility>
+	<vector>
+
+1557957801 c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\include\light.h
+	<windows.h>
+	<GL/gl.h>
+
+1557957801 c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\include\menu.h
+	<Texture.h>
+	<Utility.h>
+	<windows.h>
+	<bits/stdc++.h>
+	<GL/gl.h>
+	<stdio.h>
+	<string.h>
+	<iostream>
+
+1557957800 c:\users\purpe\onedrive\desktop\moko arena 1.1\common\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1557968385 source:c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\src\enemy.cpp
+	"Enemy.h"
+
+1557968883 source:c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\src\game.cpp
+	"Game.h"
+
+1557957802 source:c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\src\ground.cpp
+	"Ground.h"
+
+1557957802 source:c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\src\light.cpp
+	"Light.h"
+
+1557957802 source:c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\src\menu.cpp
+	"Menu.h"
+
+1557969760 source:c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\src\player.cpp
+	"Player.h"
+
+1557957802 source:c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\src\rigidbody.cpp
+	"RigidBody.h"
+
+1557957801 c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\include\rigidbody.h
+	<Texture.h>
+	<Ground.h>
+	<Utility.h>
+	<windows.h>
+	<GL/gl.h>
+
+1557957802 source:c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\src\sound.cpp
+	"Sound.h"
+
+1557969227 source:c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\src\texture.cpp
+	"Texture.h"
+
+1557957802 source:c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\src\timer.cpp
+	"Timer.h"
+
+1557957802 source:c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\src\utility.cpp
+	"Utility.h"
+
+1557970314 source:c:\users\purpe\onedrive\desktop\moko arena 1.1\moko arena\src\ammunition.cpp
+	"Ammunition.h"
+
